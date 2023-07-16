@@ -46,7 +46,7 @@ const ClientDetails: React.FC<ClientProps> = ({ id, setisInforCardCliked }: Clie
 
   return (
     <>
-      {clientData ? (
+      {clientData && !isLoading ? (
         <article className="flex flex-col gap-3 bg-white rounded-md p-3">
           <div className="flex justify-between">
             <span className="flex justify-center items-center text-3xl font-bold">
