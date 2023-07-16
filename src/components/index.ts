@@ -1,3 +1,4 @@
+export { default as ClientDetails } from './ClientDetails/ClientDetails';
 export * from './Icons/Types/IconProps';
 export * from './Icons';
 export { default as ClientCard } from './SearchSection/ClientCard/ClientCard';
