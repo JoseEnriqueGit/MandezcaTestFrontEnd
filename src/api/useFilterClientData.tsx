@@ -29,18 +29,12 @@ const useFilterClientData = (toSearch: string, selectedPerfil: string) => {
 		[]
 	);
 
-	const { data } = useQuery(
-		"clientData",
-		async () => {
-			const response = await axios.get<ClientData[]>(
-				"https://localhost:7160/url/mnt/GetFullData/all-data"
-			);
-			return response.data;
-		},
-		{
-			refetchInterval: 100,
-		}
-	);
+	const { data } = useQuery("clientData", async () => {
+		const response = await axios.get<ClientData[]>(
+			"https://localhost:7160/url/mnt/GetFullData/all-data"
+		);
+		return response.data;
+	});
 
 	useEffect(() => {
 		if (data) {

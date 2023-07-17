@@ -11,15 +11,6 @@ interface ClientCardProps {
 	setclientCardSelected: (newValue: number) => void;
 }
 
-const handleDelete = async (id: number) => {
-	try {
-		await axios.delete(`https://localhost:7160/url/mnt/DeleteFullData/${id}`);
-	} catch (error) {
-		console.error("Error deleting client:", error);
-	}
-};
-
-
 const ClientCard = (props: ClientCardProps) => {
 	const queryClient = useQueryClient();
 	const handleClick = () => {
@@ -27,8 +18,12 @@ const ClientCard = (props: ClientCardProps) => {
 		props.setclientCardSelected(props.id);
 	};
 
-	const handleDeleteClick = () => {
-		handleDelete(props.id);
+	const handleDeleteClick = async () => {
+		try {
+			await axios.delete(`https://localhost:7160/url/mnt/DeleteFullData/${props.id}`);
+		} catch (error) {
+			console.error("Error deleting client:", error);
+		}
 		queryClient.invalidateQueries("clientData");
 		queryClient.invalidateQueries("perfiles");
 	};
