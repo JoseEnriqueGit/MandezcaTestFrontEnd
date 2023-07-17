@@ -9,7 +9,7 @@ interface ClientCardProps {
 	email: string;
 	setisInforCardCliked: (newValue: boolean) => void;
 	setclientCardSelected: (newValue: number) => void;
-	seteditCliked: (newValue: boolean) => void;
+	// seteditCliked: (newValue: boolean) => void;
 }
 
 const handleDelete = async (id: number) => {

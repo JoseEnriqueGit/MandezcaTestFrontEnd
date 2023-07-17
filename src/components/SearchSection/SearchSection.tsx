@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 interface SearchSectionProps {
 	setisInforCardCliked: (newValue: boolean) => void;
 	setclientCardSelected: (newValue: number) => void;
-	setEditCliked: (newValue: boolean) => void;
+	// setEditCliked: (newValue: boolean) => void;
 }
 
 const SearchSection = (props: SearchSectionProps) => {
@@ -42,7 +42,7 @@ const SearchSection = (props: SearchSectionProps) => {
 							email={client.clientEmail}
 							setisInforCardCliked={props.setisInforCardCliked}
 							setclientCardSelected={props.setclientCardSelected}
-							seteditCliked={props.setEditCliked}
+							// seteditCliked={props.setEditCliked}
 						/>
 					))
 				) : (
