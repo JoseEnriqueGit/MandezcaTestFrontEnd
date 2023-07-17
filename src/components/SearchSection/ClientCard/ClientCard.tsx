@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Edit, Trash } from "../../Icons";
 import { useQueryClient } from "react-query";
+import { Link } from "react-router-dom";
 
 interface ClientCardProps {
 	id: number;
@@ -8,6 +9,7 @@ interface ClientCardProps {
 	email: string;
 	setisInforCardCliked: (newValue: boolean) => void;
 	setclientCardSelected: (newValue: number) => void;
+	seteditCliked: (newValue: boolean) => void;
 }
 
 const handleDelete = async (id: number) => {
@@ -17,6 +19,7 @@ const handleDelete = async (id: number) => {
 		console.error("Error deleting client:", error);
 	}
 };
+
 
 const ClientCard = (props: ClientCardProps) => {
 	const queryClient = useQueryClient();
@@ -30,6 +33,11 @@ const ClientCard = (props: ClientCardProps) => {
 		queryClient.invalidateQueries("clientData");
 		queryClient.invalidateQueries("perfiles");
 	};
+	
+	const handleEdit = async () => {
+		// props.seteditCliked(true);
+		props.setclientCardSelected(props.id);
+	};
 
 	return (
 		<section className="flex flex-row justify-between bg-white w-full rounded-md p-3 hover:bg-slate-100">
@@ -41,12 +49,12 @@ const ClientCard = (props: ClientCardProps) => {
 				</div>
 			</div>
 			<div className="flex justify-center items-center gap-3 z-10">
-				<button className="flex justify-center items-center w-10 h-10 bg-blue-500 rounded-md">
+				<Link to="edit" onClick={handleEdit} className="flex justify-center items-center w-10 h-10 bg-blue-500 rounded-md hover:bg-blue-400">
 					<Edit width={28} height={28} strokeWidth={2} />
-				</button>
+				</Link>
 				<button
 					onClick={handleDeleteClick}
-					className="flex justify-center items-center w-10 h-10 bg-red-500 rounded-md"
+					className="flex justify-center items-center w-10 h-10 bg-red-500 rounded-md hover:bg-red-400"
 				>
 					<Trash width={28} height={28} strokeWidth={2} />
 				</button>
