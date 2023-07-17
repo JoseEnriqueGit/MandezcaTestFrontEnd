@@ -1,10 +1,10 @@
 import Search from "./Search/Search";
-import { Plus } from "../Icons";
 import { useState } from "react";
-import Listbox from "./Select/ListBox";
 import { useFilterClientData } from "../../api/";
-import ClientCard from "./ClientCard/ClientCard";
 import { Link } from "react-router-dom";
+import { Plus } from "../Icons";
+import Listbox from "./Select/ListBox";
+import ClientCard from "./ClientCard/ClientCard";
 
 interface SearchSectionProps {
 	setisInforCardCliked: (newValue: boolean) => void;

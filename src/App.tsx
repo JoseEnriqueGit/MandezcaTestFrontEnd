@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { DataView, AddView, EditView } from "./Pages";
-// import { EditView } from "./components";
 
 function App() {
 	const [clientCardSelected, setclientCardSelected] = useState(5);

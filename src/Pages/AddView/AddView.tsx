@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { ArrowBackUp } from "../../components/Icons";
-import { Input } from "../../components";
+import { Input, ArrowBackUp } from "../../components";
 import { FormData } from "../Types/IFormData";
 
 const AddView = () => {
@@ -18,7 +17,8 @@ const AddView = () => {
 		setTimeout(() => setMessage(false), 3000);
 	};
 
-	// update formData when input values change
+	// Esta función maneja el cambio de entrada en un elemento de entrada.
+	// Actualiza el estado del formulario con el valor de la entrada cuando cambia.
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = event.target;
 		setFormData((prevState) => ({ ...prevState, [name]: value }));

@@ -45,17 +45,17 @@ const useFilterClientData = (toSearch: string, selectedPerfil: string) => {
 	useEffect(() => {
 		if (data) {
 			const fuse = new Fuse(data, options);
-			const filteredByName = toSearch
+			const filteredByParams = toSearch
 				? fuse.search(toSearch).map((result) => result.item)
 				: data;
 			const filteredByPerfil =
 				selectedPerfil !== "Sin filtro"
-					? filteredByName.filter((client) =>
+					? filteredByParams.filter((client) =>
 							client.perfilTitle
 								.toLowerCase()
 								.includes(selectedPerfil.toLowerCase())
 					  )
-					: filteredByName;
+					: filteredByParams;
 			setFilteredClientData(filteredByPerfil);
 		}
 	}, [toSearch, selectedPerfil, data]);

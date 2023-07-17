@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, redirect } from "react-router-dom";
 import axios from "axios";
-import { ArrowBackUp } from "../../components/Icons";
-import { Input } from "../../components";
+import { Input, ArrowBackUp } from "../../components";
 import { FormData } from "../Types/IFormData";
 
 interface EditViewProps {
