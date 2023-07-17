@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { ArrowBackUp } from "../../components/Icons";
 import { Input } from "../../components";
-import { FormData } from "./Types/IFormData";
+import { FormData } from "../Types/IFormData";
 
 const AddView = () => {
 	const [formData, setFormData] = useState<FormData>({});
@@ -120,7 +120,9 @@ const AddView = () => {
 					AGREGAR
 				</button>
 				{message && (
-					<p className="bg-green-100 p-3 text-sm text rounded-md font-bold">Datos registrado correctamente</p>
+					<p className="bg-green-100 p-3 text-sm text rounded-md font-bold">
+						Datos registrado correctamente
+					</p>
 				)}
 			</form>
 		</>

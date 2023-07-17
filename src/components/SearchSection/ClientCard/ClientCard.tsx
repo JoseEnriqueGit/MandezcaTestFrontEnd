@@ -9,7 +9,6 @@ interface ClientCardProps {
 	email: string;
 	setisInforCardCliked: (newValue: boolean) => void;
 	setclientCardSelected: (newValue: number) => void;
-	// seteditCliked: (newValue: boolean) => void;
 }
 
 const handleDelete = async (id: number) => {
@@ -35,7 +34,6 @@ const ClientCard = (props: ClientCardProps) => {
 	};
 	
 	const handleEdit = async () => {
-		// props.seteditCliked(true);
 		props.setclientCardSelected(props.id);
 	};
 
@@ -48,7 +46,7 @@ const ClientCard = (props: ClientCardProps) => {
 					<span className="font-bold">Email: {props.email}</span>
 				</div>
 			</div>
-			<div className="flex justify-center items-center gap-3 z-10">
+			<div className="flex justify-center items-center gap-3">
 				<Link to="edit" onClick={handleEdit} className="flex justify-center items-center w-10 h-10 bg-blue-500 rounded-md hover:bg-blue-400">
 					<Edit width={28} height={28} strokeWidth={2} />
 				</Link>

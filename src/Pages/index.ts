@@ -1,3 +1,4 @@
 export { default as AddView } from './AddView/AddView';
-export * from './AddView/Types/IFormData';
-export { default as ViewDataPage } from './ViewDataPage';
+export { default as DataView } from './DataView/DataView';
+export { default as EditView } from './EditView/EditView';
+export * from './Types/IFormData';

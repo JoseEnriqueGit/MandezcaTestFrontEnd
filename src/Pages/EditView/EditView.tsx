@@ -3,7 +3,7 @@ import { Link, redirect } from "react-router-dom";
 import axios from "axios";
 import { ArrowBackUp } from "../../components/Icons";
 import { Input } from "../../components";
-import { FormData } from "./Types/IFormData";
+import { FormData } from "../Types/IFormData";
 
 interface EditViewProps {
   id: number; // Replace 'string' with the actual type of your id (e.g., number, etc.)

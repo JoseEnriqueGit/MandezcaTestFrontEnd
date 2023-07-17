@@ -16,7 +16,7 @@ const fetchPerfiles = async () => {
     data.map((item: any) => item.perfilTitle)
   );
 
-  // Convert the Set back to an array with explicit type annotation
+
   const uniquePerfiles: Profile[] = Array.from(uniquePerfilesSet, (perfilTitle) => ({
     perfilTitle,
   }));
