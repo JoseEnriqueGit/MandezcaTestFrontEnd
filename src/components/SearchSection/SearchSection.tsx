@@ -4,33 +4,36 @@ import { useState } from "react";
 import Listbox from "./Select/ListBox";
 import { useFilterClientData } from "../../api/";
 import ClientCard from "./ClientCard/ClientCard";
+import { Link } from "react-router-dom";
 
 interface SearchSectionProps {
-  setisInforCardCliked: (newValue: boolean) => void;
+	setisInforCardCliked: (newValue: boolean) => void;
 	setclientCardSelected: (newValue: number) => void;
+	setEditCliked: (newValue: boolean) => void;
 }
-
 
 const SearchSection = (props: SearchSectionProps) => {
 	const [toSearch, setToSearch] = useState("");
 	const [perfil, setPerfil] = useState("");
 
-	const {filteredClientData} = useFilterClientData(toSearch, perfil);
+	const { filteredClientData } = useFilterClientData(toSearch, perfil);
 
 	return (
 		<article className="flex flex-col gap-3">
 			<div className="flex flex-row justify-between gap-2">
 				<Search setToSearch={setToSearch} />
-				<button className="flex justify-center items-center w-24 bg-blue-500 rounded-md">
+				<Link
+					className="flex justify-center items-center w-24 bg-blue-500 rounded-md hover:bg-blue-400"
+					to="/add"
+				>
 					<Plus width={28} height={28} strokeWidth={2} />
-				</button>
+				</Link>
 			</div>
 
 			<Listbox perfil={perfil} setPerfil={setPerfil} />
 
 			<section className="flex w-full max-h-96 flex-col gap-3 overflow-auto">
-				{
-					filteredClientData ?
+				{filteredClientData ? (
 					filteredClientData.map((client) => (
 						<ClientCard
 							key={client.clientId}
@@ -39,10 +42,12 @@ const SearchSection = (props: SearchSectionProps) => {
 							email={client.clientEmail}
 							setisInforCardCliked={props.setisInforCardCliked}
 							setclientCardSelected={props.setclientCardSelected}
+							seteditCliked={props.setEditCliked}
 						/>
 					))
-					: <span>No hay datos</span>
-				}
+				) : (
+					<span>No hay datos</span>
+				)}
 			</section>
 		</article>
 	);
