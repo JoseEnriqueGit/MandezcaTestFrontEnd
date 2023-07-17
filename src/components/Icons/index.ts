@@ -1,3 +1,4 @@
+export { default as ArrowBackUp } from './ArrowBackUp';
 export { default as Edit } from './Edit';
 export { default as Plus } from './Plus';
 export { default as SearchIcon } from './SearchIcon';
