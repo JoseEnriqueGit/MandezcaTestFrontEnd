@@ -1,7 +1,10 @@
 export { default as ClientDetails } from './ClientDetails/ClientDetails';
+export { default as EditView } from './EditData/EditView';
+export * from './EditData/Types/IFormData';
 export * from './Icons/Types/IconProps';
 export * from './Icons';
 export { default as ClientCard } from './SearchSection/ClientCard/ClientCard';
 export { default as Search } from './SearchSection/Search/Search';
 export { default as SearchSection } from './SearchSection/SearchSection';
 export { default as ListBox } from './SearchSection/Select/ListBox';
+export { default as Input } from './SearchSection/UI/Input';
