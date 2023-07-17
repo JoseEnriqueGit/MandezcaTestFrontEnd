@@ -14,7 +14,7 @@ interface ClientCardProps {
 
 const handleDelete = async (id: number) => {
 	try {
-		await axios.delete(`https://localhost:7160/url/mnt/Client/${id}`);
+		await axios.delete(`https://localhost:7160/url/mnt/DeleteFullData/${id}`);
 	} catch (error) {
 		console.error("Error deleting client:", error);
 	}

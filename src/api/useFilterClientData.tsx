@@ -33,7 +33,7 @@ const useFilterClientData = (toSearch: string, selectedPerfil: string) => {
 		"clientData",
 		async () => {
 			const response = await axios.get<ClientData[]>(
-				"https://localhost:7160/url/mnt/Client/all-data"
+				"https://localhost:7160/url/mnt/GetFullData/all-data"
 			);
 			return response.data;
 		},

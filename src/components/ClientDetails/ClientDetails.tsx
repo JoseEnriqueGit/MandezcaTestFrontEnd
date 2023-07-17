@@ -29,7 +29,7 @@ const ClientDetails: React.FC<ClientProps> = ({ id, setisInforCardCliked }: Clie
     const fetchData = async () => {
       try {
         const response = await axios.get<ClientData[]>(
-          `https://localhost:7160/url/mnt/Client/${id}`
+          `https://localhost:7160/url/mnt/GetClientFullData/${id}`
         );
         setClientData(response.data[0]);
       } catch (error) {

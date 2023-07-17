@@ -7,7 +7,7 @@ type Profile = {
 
 const fetchPerfiles = async () => {
   const response = await axios.get(
-    "https://localhost:7160/url/mnt/Client/all-data"
+    "https://localhost:7160/url/mnt/GetFullData/all-data"
   );
   const data = response.data;
 

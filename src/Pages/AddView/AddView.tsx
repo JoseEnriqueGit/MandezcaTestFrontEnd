@@ -11,7 +11,7 @@ const AddView = () => {
 
 	const handleClick = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		axios.post("https://localhost:7160/url/mnt/Client", formData);
+		axios.post("https://localhost:7160/url/mnt/PostFullData", formData);
 		// reset form data
 		setFormData({});
 		setMessage(true);

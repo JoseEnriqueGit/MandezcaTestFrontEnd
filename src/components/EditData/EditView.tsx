@@ -17,7 +17,7 @@ const EditView: React.FC<EditViewProps> = ({ id }) => {
     // Fetch data for the specified id and update the formData state
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://localhost:7160/url/mnt/Client/${id}`);
+        const response = await axios.get(`https://localhost:7160/url/mnt/GetClientFullData/${id}`);
         setFormData(response.data[0]);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -31,7 +31,7 @@ const EditView: React.FC<EditViewProps> = ({ id }) => {
     event.preventDefault();
     try {
       // Send the updated formData to the API using a PUT request.
-      await axios.put(`https://localhost:7160/url/mnt/Client/${id}`, formData);
+      await axios.put(`https://localhost:7160/url/mnt/PutFullData/${id}`, formData);
       // Handle success or any other logic here.
       setMessage(true);
       setTimeout(() => setMessage(false), 3000);
